@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Roboto&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <title>kosmosia · shop</title>
+</head>
+
+<body>
+    <div class="blackout"></div>
+
+    <!-- Navigation Bar -->
+    <div id="NavBar"></div>
+
+    <div class="container">
+
+        <div class="pop-up-modal" id="zeroQty" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Remove Item</h1>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to remove the item from you cart?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-light" id="removeZero">Remove</button>
+                        <button type="button" class="btn btn-light" id="closeModal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Splash Banner -->
+        <div class="text-center rounded mx-auto d-block">
+            <img src="images/kosmosia-banner.png" class="img-fluid text-center rounded mx-auto d-block"
+                alt="kosmosia.shop">
+        </div>
+
+        <h2>
+            <p class="divider line one-line">New Arrivals</p>
+        </h2>
+
+        <div id="newArrival" class="card-deck">
+            <div class="card">
+                <img class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title pb-3"></h5>
+                    <h6 class="card-subtitle mb-3 text-muted"></h6>
+                    <a href="#" class="add-cart btn btn-light">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title pb-3"></h5>
+                    <h6 class="card-subtitle mb-3 text-muted"></h6>
+                    <a href="#" class="add-cart btn btn-light">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title pb-3"></h5>
+                    <h6 class="card-subtitle mb-3 text-muted"></h6>
+                    <a href="#" class="add-cart btn btn-light">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="seeAll" class=" col my-5 text-center">
+            <h3><a href="shop.html">- see all -</a></h3>
+        </div>
+
+        <!-- container div end -->
+    </div>
+
+    <!-- pop-up window -->
+    <div id="pop-up-cart" class="container-sm pt-5 mt-2">
+
+        <!-- title plus close icon -->
+        <div class="text-center pt-3">
+            <ion-icon name="close-outline" id="closeCart" class="float-right" size="large"></ion-icon>
+            <h2>cart</h2>
+        </div>
+
+        <!-- total cart items -->
+        <div class="pt-4 px-0" id="cartList">
+
+            <!-- each row per cart item -->
+
+        </div>
+        <hr>
+        <div class="text-right px-4">
+            <div class="row pb-5">
+                <div class="col-8 text-left h1">
+                    subtotal
+                </div>
+                <div class="col-4 h3 my-auto">$<span id="subtotal">0</span> USD</div>
+            </div>
+            <div class="col-12 btn btn-outline-light h3" id="Checkout">Checkout</div>
+            <!-- <a href="#" class="btn btn-light h3">Checkout</a> -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="foot" class="pt-5"></div>
+
+
+
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- shopping cart icon js -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+    <!-- jQuery js -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- my js -->
+    <script src="partial/headfoot.js"></script>
+    <script src="shoppingCart.js"></script>
+    <script src="newArrivals.js"></script>
+
+</body>
+
+</html>
