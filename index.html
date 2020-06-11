@@ -19,30 +19,17 @@
 </head>
 
 <body>
-    <div class="blackout"></div>
 
     <!-- Navigation Bar -->
     <div id="NavBar"></div>
 
-    <div class="container">
-
-        <div class="pop-up-modal" id="zeroQty" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title">Remove Item</h1>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to remove the item from you cart?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-light" id="removeZero">Remove</button>
-                        <button type="button" class="btn btn-light" id="closeModal">Cancel</button>
-                    </div>
-                </div>
-            </div>
+    <div class="pop-up-modal" id="alertMsg" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content"></div>
         </div>
+    </div>
 
+    <div class="container">
 
         <!-- Splash Banner -->
         <div class="text-center rounded mx-auto d-block">
@@ -50,9 +37,7 @@
                 alt="kosmosia.shop">
         </div>
 
-        <h2>
-            <p class="divider line one-line">New Arrivals</p>
-        </h2>
+        <p class="divider line one-line h2">New Arrivals</p>
 
         <div id="newArrival" class="card-deck">
             <div class="card">
@@ -60,7 +45,9 @@
                 <div class="card-body text-center">
                     <h5 class="card-title pb-3"></h5>
                     <h6 class="card-subtitle mb-3 text-muted"></h6>
-                    <a href="#" class="add-cart btn btn-light">Add to Cart</a>
+                </div>
+                <div class="card-footer mx-auto">
+                    <button class="add-cart btn btn-light">Add to Cart</button>
                 </div>
             </div>
             <div class="card">
@@ -68,7 +55,9 @@
                 <div class="card-body text-center">
                     <h5 class="card-title pb-3"></h5>
                     <h6 class="card-subtitle mb-3 text-muted"></h6>
-                    <a href="#" class="add-cart btn btn-light">Add to Cart</a>
+                </div>
+                <div class="card-footer mx-auto">
+                    <button class="add-cart btn btn-light">Add to Cart</button>
                 </div>
             </div>
             <div class="card">
@@ -76,20 +65,19 @@
                 <div class="card-body text-center">
                     <h5 class="card-title pb-3"></h5>
                     <h6 class="card-subtitle mb-3 text-muted"></h6>
-                    <a href="#" class="add-cart btn btn-light">Add to Cart</a>
+                </div>
+                <div class="card-footer mx-auto">
+                    <button class="add-cart btn btn-light">Add to Cart</button>
                 </div>
             </div>
         </div>
-
         <div id="seeAll" class=" col my-5 text-center">
             <h3><a href="shop.html">- see all -</a></h3>
         </div>
-
-        <!-- container div end -->
     </div>
 
     <!-- pop-up window -->
-    <div id="pop-up-cart" class="container-sm pt-5 mt-2">
+    <div id="pop-up-cart" class="container pt-5 mt-2">
 
         <!-- title plus close icon -->
         <div class="text-center pt-3">
@@ -98,7 +86,7 @@
         </div>
 
         <!-- total cart items -->
-        <div class="pt-4 px-0" id="cartList">
+        <div class="pt-4 px-0 text-center show-scroll" id="cartList">
 
             <!-- each row per cart item -->
 
@@ -111,16 +99,15 @@
                 </div>
                 <div class="col-4 h3 my-auto">$<span id="subtotal">0</span> USD</div>
             </div>
-            <div class="col-12 btn btn-outline-light h3" id="Checkout">Checkout</div>
-            <!-- <a href="#" class="btn btn-light h3">Checkout</a> -->
-
+            <a href="checkout.html" class="col-12 btn btn-outline-light h3" id="Checkout">Checkout</a>
+            <div class="text-center h3 pt-3"><a href="cart.html">Review Order</a></div>
         </div>
+
+
     </div>
 
     <!-- Footer -->
     <div id="foot" class="pt-5"></div>
-
-
 
     <!-- bootstrap js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -140,9 +127,9 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <!-- my js -->
-    <script src="partial/headfoot.js"></script>
-    <script src="shoppingCart.js"></script>
-    <script src="newArrivals.js"></script>
+    <script src="main.js"></script>
+    <script src="partial/shoppingCart.js"></script>
+    <script src="partial/newArrivals.js"></script>
 
 </body>
 

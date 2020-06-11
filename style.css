@@ -4,19 +4,22 @@ body {
     position: relative;
     min-height: 100vh;
 }
-h1, h2, h3, .h1, .h2, .h3 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Questrial', sans-serif;
+}
+h1, h2, h3, h5, .h1, .h2, .h3, .h5 {
     letter-spacing: 3px;
-    /* color: #bf9cce; */
 }
 h2, .h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
 h4, .h4 {
-    font-family: 'Questrial', sans-serif;
-    /* letter-spacing: 1px; */
     font-weight: bold;
+}
+h6, .h6 {
+    letter-spacing: 1px;
+    color: #bf9cce;
 }
 hr {
     background-color: #d3ccd9;
@@ -25,8 +28,18 @@ a {
     color: #bf9cce;
 }
 a:hover {
-    color: #000;
+    color: #3e3e3e;
     text-decoration: none;
+}
+a.no-link {
+    color: #3e3e3e;
+}
+#showSummary:hover {
+    cursor: pointer;
+}
+#showSummary:hover ion-icon, 
+#showSummary:hover h6 {
+    color: #3e3e3e;
 }
 .blackout {
     position: absolute;
@@ -45,9 +58,9 @@ a:hover {
   }
 .pop-up-modal {
     height: 0;
-    width: 650px;
+    min-width: 80vw;
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 5%;
     transform: translate(-50%, -50%);
@@ -76,7 +89,7 @@ a:hover {
 }
 .line {
     align-items: center;
-    margin: 1em -1em;
+    margin: 0.5em -0.5em;
  }
 .line:before, .line:after {
     height: 1px;
@@ -116,7 +129,26 @@ a:hover {
 .container {
     padding-bottom: 120px;
     padding-top: 60px;
-    /* position: static; */
+}
+.set-width {
+    max-width: 800px;
+}
+.submit-cart {
+    width: 500px;
+}
+.show-summary {
+    display: flex;
+}
+@media (min-width: 1200px) {
+    .show-summary {
+        display: none;
+    }
+    .submit-cart {
+        max-width: 500px;
+    }
+    .shopping-card {
+        max-width: 20em;
+    }
 }
 .nav {
     background: #f5eef4;
@@ -127,20 +159,54 @@ a:hover {
     color: #3e3e3e;
     font-weight: normal;
 }
+.badge-secondary {
+    color: white;
+    font-size: 15px;
+    position: relative;
+    top: -6.3em;
+    right: -2.75em;
+    z-index: 10;    
+}
+#toggleShow.d-flex, #toggleHide.d-flex {
+    animation-name: fadein;
+    animation-duration: 0.4s;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.img-checkout {
+    border-radius: 10px;
+    height: 85px;
+    max-width: 85px;
+}
 #pop-up-cart {
     position: fixed;
     display: block;
     top: 0;
     right: 0;
     height: 100vh;
-    max-width: 500px;
     background: #f5eef4;
     z-index: 2;
     white-space: nowrap;
 }
-#cartList {
+@media (min-width: 500px) {
+    #pop-up-cart {
+        max-width: 500px;
+    }
+    .dropdown-toggle {
+        max-width: 200px;
+    }
+    .shopping-card {
+        min-width: 20em;
+    }
+}
+.show-scroll {
     overflow-y: auto;
     height: 55vh;
+}
+.form-control {
+    height: 35px;
 }
 ion-icon {
     font-size: 20px;
@@ -179,5 +245,4 @@ ion-icon:hover {
     position: absolute;
     bottom: 0;
     height: 120px;
-    /* width: 100%; */
 }

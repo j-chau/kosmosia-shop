@@ -15,7 +15,7 @@
     <!-- custom -->
     <link href="style.css" rel="stylesheet" type="text/css">
 
-    <title>kosmosia · shop - Shop</title>
+    <title>kosmosia · shop - Shopping Cart</title>
 </head>
 
 <body>
@@ -29,50 +29,49 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="text-center mx-auto d-block">
-            <img src="images/kosmosia-banner.png" class="img-fluid text-center mx-auto d-block" style="width: 40%"
-                alt="kosmosia.shop">
+    <div class="container set-width">
+
+        <h1 class="display-4 text-center my-5">Shopping Cart</h1>
+        <hr>
+        <div id="cartList"></div>
+        <div class="row pb-3 text-right">
+            <div class="col-8 text-left h3">
+                subtotal
+            </div>
+            <div class="col-4 h5 my-auto">$<span id="subtotal">0</span> USD</div>
         </div>
-        <p class="divider line one-line h2">Available Items</p>
+        <div class="row text-right" id="shippingRow">
+            <div class="col-4 text-left h3 my-auto">shipping</div>
+            <div class="dropdown d-inline col-5 pr-0">
+                <div class="invalid-feedback" id="shippingOption">Select a shipping option.</div>
+                <button class="btn btn-outline-light dropdown-toggle text-right text-wrap col-12" type="button"
+                    id="dropdownFront" data-toggle="dropdown">
+                    Select Destination
+                </button>
+                <div class="dropdown-menu" id="shipCountry">
+                    <button class="dropdown-item" type="button" value="CAN">Canada</button>
+                    <button class="dropdown-item" type="button" value="NIL">Toronto Pick-Up</button>
+                    <button class="dropdown-item" type="button" value="USA">USA</button>
+                    <button class="dropdown-item" type="button" value="INT">International</button>
+                </div>
 
-        <div class="mb-5 mx-auto card-deck" id="shopList">
+            </div>
 
-        </div>
-
-
-
-
-    </div>
-
-    <!-- pop-up window -->
-    <div id="pop-up-cart" class="container pt-5 mt-2">
-
-        <!-- title plus close icon -->
-        <div class="text-center pt-3">
-            <ion-icon name="close-outline" id="closeCart" class="float-right" size="large"></ion-icon>
-            <h2>cart</h2>
-        </div>
-
-        <!-- total cart items -->
-        <div class="pt-4 px-0 text-center show-scroll" id="cartList">
-
-            <!-- each row per cart item -->
-
+            <div class="h5 my-auto d-inline col-3 pl-0" id="shipping">TBD</div>
         </div>
         <hr>
-        <div class="text-right px-4">
-            <div class="row pb-5">
-                <div class="col-8 text-left h1">
-                    subtotal
-                </div>
-                <div class="col-4 h3 my-auto">$<span id="subtotal">0</span> USD</div>
+        <div class="row pb-5 text-right">
+            <div class="col-6 text-left h1">
+                total
             </div>
-            <a href="checkout.html" class="col-12 btn btn-outline-light h3" id="Checkout">Checkout</a>
-            <div class="text-center h3 pt-3"><a href="cart.html">Review Order</a></div>
+            <div class="col-6 h3 my-auto" id="total">TBD</div>
         </div>
-    </div>
+        <div class="text-right">
+            <a href="checkout.html" class="col-4 btn btn-light h3 mb-5" id="Checkout">Checkout</a>
+        </div>
 
+
+    </div>
 
     <!-- Footer -->
     <div id="foot"></div>
@@ -96,8 +95,7 @@
 
     <!-- my js -->
     <script src="main.js"></script>
-    <script src="partial/shoppingCart.js"></script>
-    <script src="partial/shop.js"></script>
+    <script src="partial/cartCheckout.js"></script>
 
 </body>
 

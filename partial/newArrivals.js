@@ -33,8 +33,7 @@ fetch(catalogue, {
             cardSubtitle.innerText = "$" + price + " USD";
             cardImgTop.src = imgURL;
             // cardImgTop.alt = sku;
-
         }
-    }
-    );
+        triggerAddCart();
+    });
 
