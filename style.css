@@ -133,9 +133,6 @@ a.no-link {
 .set-width {
     max-width: 800px;
 }
-.submit-cart {
-    width: 500px;
-}
 .show-summary {
     display: flex;
 }
@@ -144,7 +141,7 @@ a.no-link {
         display: none;
     }
     .submit-cart {
-        max-width: 500px;
+        width: 500px;
     }
     .shopping-card {
         max-width: 20em;
@@ -199,6 +196,9 @@ a.no-link {
     }
     .shopping-card {
         min-width: 20em;
+    }
+    .submit-cart {
+        max-width: 500px;
     }
 }
 .show-scroll {
