@@ -1,8 +1,8 @@
 updateCart();
 
 function showOrderTotal() {
-    shippingCost = sessionStorage.getItem("shipping");
-    if (!Number.isNaN(parseInt(shippingCost))) {
+    shippingCost = parseInt(sessionStorage.getItem("shipping"));
+    if (shippingCost >= 0) {
         showShipping(shippingCost);
         total = $("#total").text();
     }
@@ -23,8 +23,8 @@ function buildCartList(obj) {
             <img src="${obj.imgURL}" class="img-checkout">
             <span class="badge badge-pill badge-secondary">${obj.qty}</span>
         </div>
-        <div class="flex-grow-1 text-wrap my-auto pl-2">
-            <h4>${obj.description}</h4>
+        <div class="flex-grow-0 text-wrap my-auto pl-2">
+            <h5>${obj.description}</h5>
         </div>
         <div class="flex-grow-1 text-right my-auto pr-1">
             <div class>$${singleTotal} USD</div>
@@ -56,7 +56,7 @@ $(".form-check-input").click(function () {
         $(".address-row :input").prop("disabled", false);
         price = null;
     }
-    showShipping(price);
+    sessionStorage.setItem("shipping", price);
     showOrderTotal();
 });
 
@@ -69,7 +69,7 @@ $("#shipCountry").click(function () {
     for (let i in shippingInfo) {
         if (countryCode === shippingInfo[i].country_code) {
             price = shippingInfo[i].cost;
-            showShipping(price);
+            sessionStorage.setItem("shipping", price);
             showOrderTotal();
         }
     }
@@ -98,6 +98,11 @@ $("#shipCountry").click(function () {
 
 $(document).ready(() => {
     showOrderTotal();
+    if (parseInt(sessionStorage.getItem("shipping")) == 0) {
+        $("#ship2").prop("checked", true);
+        $(".address-row :input").prop("disabled", true);
+
+    }
 
     forms = document.getElementsByClassName("needs-validation");
     validation = Array.prototype.filter.call(forms, (form) => {
