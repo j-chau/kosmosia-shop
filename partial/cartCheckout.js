@@ -2,8 +2,8 @@ emptyNote();
 updateCart();
 
 $(window).on("load", function () {
-    shippingCost = sessionStorage.getItem("shipping");
-    if (shippingCost > 0) {
+    shippingCost = parseInt(sessionStorage.getItem("shipping"));
+    if (shippingCost >= 0) {
         showShipping(shippingCost);
         for (let i in shippingInfo) {
             if (shippingCost == shippingInfo[i].cost) {

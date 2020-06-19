@@ -1,4 +1,4 @@
-var modalText = [
+const modalText = [
     {
         title: "Remove Item",
         body: "Are you sure you want to remove the item from you cart?",
@@ -25,29 +25,29 @@ var modalText = [
     }
 ]
 
-var shippingInfo = [
+const shippingInfo = [
     {
         country_code: "CAN",
         country: "Canada",
-        cost: 3.00,
+        cost: 3,
         ship_time: "2-5 business days"
     },
     {
         country_code: "NIL",
         country: "Toronto Pick-Up",
-        cost: 0.00,
+        cost: 0,
         ship_time: "N/A"
     },
     {
         country_code: "USA",
         country: "USA",
-        cost: 5.00,
+        cost: 5,
         ship_time: "7-14 business days"
     },
     {
         country_code: "INT",
         country: "International",
-        cost: 8.00,
+        cost: 8,
         ship_time: "14-30 business days"
     }
 ]
@@ -63,6 +63,11 @@ $(window).on("load", countCart = () => {
             total += cartItems[i].qty;
         }
         cartQtyTotal(total);
+        sessionStorage.setItem("total", total);
+        price = parseInt(sessionStorage.getItem("shipping"));
+        if (!Number.isNaN(price)) {
+            showShipping(parseInt(price));
+        }
     }
 });
 
@@ -138,11 +143,26 @@ function updateCart() {
     countCart();
 }
 
+const shippingCostArr = [];
+for (i = 0; i < shippingInfo.length; i++) {
+    shippingCostArr.push(shippingInfo[i].cost);
+}
+
 function showShipping(price) {
-    if (Number.isNaN(price)) {
+    var qty = sessionStorage.getItem("total");
+    if ((Number.isNaN(price) || qty > 7) && price !== 0) {
         USDformat = "TBD";
     }
     else {
+        if (price !== 0) {
+            var costArrIndex = $.inArray(price, shippingCostArr);
+            if (costArrIndex !== -1 && qty >= 5) {
+                price += 1;
+            }
+            else if (costArrIndex === -1 && qty <= 4) {
+                price -= 1;
+            }
+        }
         USDformat = "$" + price + " USD";
         sessionStorage.setItem("shipping", price);
     }
